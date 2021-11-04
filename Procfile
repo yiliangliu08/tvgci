@@ -1,1 +1,1 @@
-web: gunicorn app:tvgci
+web: gunicorn app:app
