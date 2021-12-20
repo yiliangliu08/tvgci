@@ -1,3 +1,5 @@
+import os
+
 from flask import Flask, render_template
 app = Flask(__name__)
 
@@ -14,9 +16,15 @@ def partner():
     return render_template('partner.html')
 
 @app.route('/team')
-def team\
-                ():
+def team():
     return render_template('team.html')
+
+@app.route('/showcase')
+def showcase():
+    hists = os.listdir('static/image/mocha')
+    hists = ['image/mocha/' + file for file in hists]
+    return render_template('showcase.html', hists=hists)
+
 
 if __name__ == '__main__':
     app.run()

@@ -155,3 +155,9 @@ body{
 .wrapper .main_content .partner div{
     margin-bottom: 20px;
 }
+
+.wrapper .main_content .showcase{
+    max-height:30%;
+    max-width:30%;
+    width:auto;
+}

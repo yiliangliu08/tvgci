@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+    <title>Showcase</title>
+</head>
+
+<body>
+<div class="wrapper">
+    <div class="sidebar">
+        <h2>TVGCI</h2>
+        <ul>
+            <li><a href="intro"></i>Introduction</a></li>
+            <li><a href="partner"></i>Partners</a></li>
+            <li><a href="team"></i>Meet the Team</a></li>
+            <li><a href="showcase"></i>Showcase</a></li>
+            <li><a href="review"></i>Review</a></li>
+            <li><a href="contact"></i>Contact</a></li>
+        </ul>
+        <div class="social_media">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+        </div>
+    <div class="main_content">
+        {% for hist in hists %}
+            <img class="showcase" src="{{url_for('static', filename=hist)}}" alt="{{hist}}">
+        {% endfor %}
+    </div>
+</div>
+</body>
+</html>
