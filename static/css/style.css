@@ -161,3 +161,7 @@ body{
     max-width:30%;
     width:auto;
 }
+
+.wrapper .main_content .contact {
+    margin:40px;
+}

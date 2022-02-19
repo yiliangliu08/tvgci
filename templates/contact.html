@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+    <title>Contact</title>
+</head>
+
+<body>
+<div class="wrapper">
+    <div class="sidebar">
+        <h2>TVGCI</h2>
+        <ul>
+            <li><a href="intro"></i>Introduction</a></li>
+            <li><a href="partner"></i>Partners</a></li>
+            <li><a href="team"></i>Meet the Team</a></li>
+            <li><a href="showcase"></i>Showcase</a></li>
+            <li><a href="review"></i>Review</a></li>
+            <li><a href="contact"></i>Contact</a></li>
+        </ul>
+        <div class="social_media">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+        </div>
+    <div class="main_content">
+        <div class="header">Got a project in mind? Feel free to contact us.</div>
+        <div class="contact">
+            <form action="" method="post">
+                <table>
+                    <tr>
+                        <td align="right">Name:</td>
+                        <td align="left">
+                            <input type="text" id="name" name = "name">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right">E-mail:</td>
+                        <td align="left">
+                            <input type="text" id="email" name = "email">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right">Phone:</td>
+                        <td align="left">
+                            <input type="text" id="phone" name = "phone">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right">Budget:</td>
+                        <td align="left">
+                            <input type="number" step="0.01" id="budget" name = "budget">
+                        </td>
+                    </tr>
+                    <tr style="vertical-align: top">
+                        <td align="right">Comment:</td>
+                        <td align="left" rowspan="2" style="text-align:left;vertical-align:top;padding:0">
+                            <textarea type="text" id="comment" name = "comment" autofocus
+                                      maxlength="1024" placeholder="Tell us more about this project..."></textarea>
+                        </td>
+                    </tr>
+                </table>
+                <input type="submit" value="Submit">
+              </form>
+          </div>
+      </div>
+    </div>
+</div>
+</body>
+</html>
