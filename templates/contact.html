@@ -15,7 +15,7 @@
             <li><a href="partner"></i>Partners</a></li>
             <li><a href="team"></i>Meet the Team</a></li>
             <li><a href="showcase"></i>Showcase</a></li>
-            <li><a href="review"></i>Review</a></li>
+{#            <li><a href="review"></i>Review</a></li>#}
             <li><a href="contact"></i>Contact</a></li>
         </ul>
         <div class="social_media">
@@ -25,7 +25,7 @@
       </div>
         </div>
     <div class="main_content">
-        <div class="header">Got a project in mind? Feel free to contact us.</div>
+        <div class="header">Have a project in mind? Feel free to contact us.</div>
         <div class="contact">
             <form action="" method="post">
                 <table>
@@ -56,16 +56,24 @@
                     <tr style="vertical-align: top">
                         <td align="right">Comment:</td>
                         <td align="left" rowspan="2" style="text-align:left;vertical-align:top;padding:0">
-                            <textarea type="text" id="comment" name = "comment" autofocus
-                                      maxlength="1024" placeholder="Tell us more about this project..."></textarea>
+                            <textarea type="text" id="comment" name = "comment" autofocus maxlength="1024"
+                                      placeholder="Tell us more about this project..."
+                                      onkeyup="countChars(this);"></textarea>
+                            <div class="count">
+                                <p id="charNum">0/1024 characters</p>
+                            </div>
                         </td>
                     </tr>
                 </table>
-                <input type="submit" value="Submit">
+                <div class="submit_button">
+                    <input type="submit" value="Submit" id>
+                </div>
               </form>
           </div>
       </div>
     </div>
 </div>
+<!--Script-->
+<script src="/static/js/script.js"></script>
 </body>
 </html>

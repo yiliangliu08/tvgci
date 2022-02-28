@@ -1,14 +1,18 @@
 import os
 import uuid
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, flash
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.dialects.postgresql import UUID
+
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = 'postgresql://thhdiqjopereve:c43e9cd76448f496e9508a5ad704520d43bc30d795275396d94543749485f603@ec2-44-193-188-118.compute-1.amazonaws.com:5432/d1es6b77cis6gd'
 db = SQLAlchemy(app)
-
+app.secret_key='test'
 
 class customers(db.Model):
     id = db.Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4())
@@ -54,10 +58,22 @@ def showcase():
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
     if request.method =='POST':
-        print(request.form['name'])
         customer = customers(request.form['name'], request.form['email'], request.form['phone'], request.form['budget'], request.form['comment'])
         db.session.add(customer)
         db.session.commit()
+        #
+        # content = "Name: {}\n" \
+        #           "E-mail: {}\n" \
+        #           "Phone: {}\n" \
+        #           "Budget: {}\n" \
+        #           "Comment: {}\n".format(
+        #             request.form['name'],
+        #             request.form['email'],
+        #             request.form['phone'],
+        #             request.form['budget'],
+        #             request.form['comment'])
+        # sender = "tony1997810@gmail.com"
+        # flash("Your request has been submitted.")
     return render_template('contact.html')
 
 if __name__ == '__main__':
